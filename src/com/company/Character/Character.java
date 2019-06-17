@@ -1,38 +1,28 @@
 package com.company.Character;
 
-public class Character {
-    protected String type;
-    public int level;
-    public int hp;
-    protected int strength;
-    public int agility;
-    public int intelligence;
-    public String basicAttackName;
-    public String specialAttackName;
+public abstract class Character {
+    protected int level = 0;
+    protected int hp = 0;
+    protected int strength = 0;
+    protected int agility = 0;
+    protected int intelligence = 0;
+    protected int damages = 0;
 
-    /**
-     * The basic attack of the character
-     */
-    public void basicAttack(){
-    }
-
-    /**
-     * The special attack of the character
-     */
-    public void specialAttack(){
+    public Character(int level, int hp, int strength, int agility, int intelligence, int damages) {
+        this.level = level;
+        this.hp = hp;
+        this.strength = strength;
+        this.agility = agility;
+        this.intelligence = intelligence;
+        this.damages = damages;
     }
 
     public void getDamages(){
-
+        this.hp -= damages;
     }
 
-    public void setDamages() {
-
-    }
-
-    public String getType() {
-        return type;
-    }
+    public abstract int BasicCapacity();
+    public abstract int SpecialCapacity();
 
     public int getLevel() {
         return level;
@@ -52,18 +42,6 @@ public class Character {
 
     public int getIntelligence() {
         return intelligence;
-    }
-
-    public String getBasicAttackName() {
-        return basicAttackName;
-    }
-
-    public String getSpecialAttackName() {
-        return specialAttackName;
-    }
-
-    public void setType(String type) {
-        this.type = type;
     }
 
     public void setLevel(int level) {
